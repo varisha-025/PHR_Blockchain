@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react'
-
+import { useNavigate } from 'react-router-dom';
 
 export default function BasicDetails() {
 
     const [auth, setAuth] = useState(true);
-    const [name,setName] = useState('Varisha Rashid')
-    const [email,setEmail] = useState('varisharashid01@gmail.com')
-    const [address,setAddress] = useState('Ranchi')
-    const [dob,setDOB] = useState('25-01-2003')
-    const [gender,setGender] = useState('Female')
-    const [state,setState] = useState('Jharkhand')
-    const [passowrd,setPassword] = useState('varru1029')
-    const [phone,setPhone] = useState('9931230984')
+    const [name, setName] = useState('Varisha Rashid')
+    const [email, setEmail] = useState('varisharashid01@gmail.com')
+    const [address, setAddress] = useState('Ranchi')
+    const [dob, setDOB] = useState('25-01-2003')
+    const [gender, setGender] = useState('Female')
+    const [state, setState] = useState('Jharkhand')
+    const [password, setPassword] = useState('varru1029')
+    const [phone, setPhone] = useState('9931230984')
 
 
     useEffect(() => {
@@ -22,9 +22,27 @@ export default function BasicDetails() {
 
     }, [])
 
-    function handleSubmit(event){
-      event.preventDefault();
-      console.log(event)
+    const navigate = useNavigate();
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        
+        console.log(event)
+        let basicData = {
+            name: name,
+            email: email,
+            address: address,
+            dob: dob,
+            gender: gender,
+            state: state,
+            password: password,
+            phone: phone,
+
+        }
+
+        localStorage.setItem('basicDetails', JSON.stringify(basicData))
+        let details = JSON.parse(localStorage.getItem('basicDetails'))
+        navigate('/medical')
     }
 
     return (
@@ -35,39 +53,41 @@ export default function BasicDetails() {
                         <div className="col-sm-6 form-group">
                             <label htmlFor="name" className='mt-10'>Full Name</label>
                             <input type="text" className="form-control" name="name" id="name" placeholder="Enter your full name." required onChange={event => {
-                               setName(event.target.value)
-                            }}/>
+                                setName(event.target.value)
+                            }} />
                         </div>
-                       
+
                         <div className="col-sm-6 form-group">
                             <label htmlFor="email" className='mt-10'>Email</label>
                             <input type="email" className="form-control" name="email" id="email" placeholder="Enter your email." required onChange={event => {
-                               setEmail(event.target.value)
-                            }}/>
+                                setEmail(event.target.value)
+                            }} />
                         </div>
                         <div className="col-sm-6 form-group">
                             <label htmlFor="address">Address</label>
                             <input type="address" className="form-control" name="address" id="address" placeholder="Enter your address." onChange={event => {
-                               setAddress(event.target.value)
-                            }}/>
+                                setAddress(event.target.value)
+                            }} />
                         </div>
-                       
+
                         <div className="col-sm-6 form-group">
                             <label htmlFor="state">State</label>
                             <input type="address" className="form-control" name="state" id="state" placeholder="Enter your state name." required onChange={event => {
-                               setState(event.target.value)
-                            }}/>
+                                setState(event.target.value)
+                            }} />
                         </div>
 
                         <div className="col-sm-6 form-group">
                             <label htmlFor="Date">Date Of Birth</label>
                             <input type="Date" name="dob" className="form-control" id="Date" placeholder="" required onChange={event => {
-                               setDOB(event.target.value)
-                            }}/>
+                                setDOB(event.target.value)
+                            }} />
                         </div>
                         <div className="col-sm-6 form-group">
                             <label htmlFor="gender">Gender</label>
-                            <select id="gender" className="form-control browser-default custom-select">
+                            <select id="gender" className="form-control browser-default custom-select" onChange={event => {
+                                setGender(event.target.value)
+                            }}>
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
                                 <option value="unspesified">Unspecified</option>
@@ -294,11 +314,15 @@ export default function BasicDetails() {
                         </div>
                         <div className="col-sm-4 form-group">
                             <label htmlFor="tel">Phone</label>
-                            <input type="tel" name="phone" className="form-control" id="tel" placeholder="Enter your phone number." required />
+                            <input type="tel" name="phone" className="form-control" id="tel" placeholder="Enter your phone number." required onChange={event => {
+                                setPhone(event.target.value)
+                            }}/>
                         </div>
                         <div className="col-sm-6 form-group">
                             <label htmlFor="password" >Password</label>
-                            <input type="Password" name="password" className="form-control" id="pass" placeholder="Enter your password." required />
+                            <input type="Password" name="password" className="form-control" id="pass" placeholder="Enter your password." required onChange={event => {
+                                setPassword(event.target.value)
+                            }}/>
                         </div>
                         <div className="col-sm-12">
                             <a href='/medical'><button className="btn btn-primary float-center pr-6 pl-6" onClick={handleSubmit}>Next</button></a>

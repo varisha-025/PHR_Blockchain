@@ -39,15 +39,18 @@ export default function Decision() {
             <Navbar />
             <div className='w-100 mt-10'>
                 <div className='flex items-center justify-center flex-column pt-10'>
-                    <Typography  variant='h5' className='mb-5'>
+                    <Typography  variant='h5' className='mb-5' sx={{ fontWeight: 600, width: '430px'}}>
                         Choose Health Professionals for your Organisation
                     </Typography>
                     {data.map((item,ind) => (
                         <div className='decision-box' key={ind}>
 
-                            <Typography variant='h6'>Name: {item.name}</Typography>
-                            <br/>
-                            <Typography variant='h6'>Aadhar number: {item.adhar_number}</Typography>
+                            <Typography variant='h6' sx={{ fontWeight: 500}} >Name: {item.name}</Typography>
+                            {/* <br/> */}
+                           
+                            <Typography variant='h6' sx={{ fontWeight: 500}} >Profession: {item.profession}</Typography>
+                        
+                            <Typography variant='h6' sx={{ fontWeight: 500 }}>Phone: {item.phone}</Typography>
 
                             <button className="btn btn-primary float-center">Approve</button>
 

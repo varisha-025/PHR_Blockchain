@@ -13,7 +13,7 @@ export default function MedicalProfile() {
         color: theme.palette.text.secondary,
     }));
 
-    const user = localStorage.getItem('user');
+    const basic = localStorage.getItem('basicDetails');
     const profile = localStorage.getItem('profile');
 
     return (
