@@ -66,8 +66,8 @@ export default function BasicDetails() {
                             }}/>
                         </div>
                         <div className="col-sm-6 form-group">
-                            <label htmlFor="sex">Gender</label>
-                            <select id="sex" className="form-control browser-default custom-select">
+                            <label htmlFor="gender">Gender</label>
+                            <select id="gender" className="form-control browser-default custom-select">
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
                                 <option value="unspesified">Unspecified</option>

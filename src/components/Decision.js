@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Navbar from './Common/Navbar';
+import { Typography } from '@mui/material';
 
 export default function Decision() {
 
@@ -36,14 +37,17 @@ export default function Decision() {
     return (
         <div>
             <Navbar />
-            <div className='box mt-10'>
-                <div className='flex align-center justify-center flex-column pt-20'>
-                    {data.map((item) => (
-                        <div className='decision-box'>
+            <div className='w-100 mt-10'>
+                <div className='flex items-center justify-center flex-column pt-10'>
+                    <Typography  variant='h5' className='mb-5'>
+                        Choose Health Professionals for your Organisation
+                    </Typography>
+                    {data.map((item,ind) => (
+                        <div className='decision-box' key={ind}>
 
-                            <h1>Name - {item.name}</h1>
+                            <Typography variant='h6'>Name: {item.name}</Typography>
                             <br/>
-                            <h1>Aadhar number - {item.adhar_number}</h1>
+                            <Typography variant='h6'>Aadhar number: {item.adhar_number}</Typography>
 
                             <button className="btn btn-primary float-center">Approve</button>
 

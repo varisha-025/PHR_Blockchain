@@ -79,7 +79,7 @@ export default function MedicalRecordsForm() {
             <Typography variant="h4" component="h2" sx={{ paddingTop: '60px'}}>
                 Medical Records Form
             </Typography>
-            <div className='box flex align-center justify-center pt-10'>
+            <div className='box flex items-center justify-center pt-10'>
                 <div className='choose-box'>
                     <ImageList sx={{ width: '600px', height: '350px', marginLeft: '30px', marginTop: '70px' }}>
                         {itemData.map((item) => (

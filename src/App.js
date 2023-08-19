@@ -21,7 +21,6 @@ import Decision from './components/Decision';
 function App() {
 
   const user = localStorage.getItem('user');
-  // localStorage.setItem('user', 'Varisha Rashid');
 
   const [auth, setAuth] = React.useState(true);
 

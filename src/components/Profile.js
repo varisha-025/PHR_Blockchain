@@ -33,7 +33,7 @@ export default function Dashboard() {
 
     return (
         <div>
-            <div className='flex align-center justify-center pt-20'>
+            <div className='flex items-center justify-center pt-20'>
 
                 <div className='choose-box'>
                 <ImageList sx={{ width: '500px', height: '350px', marginLeft: '30px', marginTop: '70px' }}>
