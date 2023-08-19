@@ -1,0 +1,176 @@
+
+<div className="loader">
+   
+    <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-466.4 259.6 280.2 47.3" enable-background="new -466.4 259.6 280.2 47.3" xml:space="preserve">
+        <polyline className="animation"   points="-465.4,281 -436,281 -418.9,281 -423.9,281 -363.2,281 -355.2,269 -345.2,303 -335.2,263 -325.2,291 -319.2,281 -187.2,281 "></polyline>
+        
+    </svg>
+</div>
+
+<style>
+    @-webkit-keyframes pulsate {
+  0% {
+    background-color: #D6DAFF;
+  }
+  25% {
+    background-color: #D6DAFF;
+  }
+  50% {
+    background-color: #D6DAFF;
+  }
+  75% {
+    background-color: #D6DAFF;
+  }
+  100% {
+    background-color: #D6DAFF;
+  }
+}
+@-moz-keyframes pulsate {
+  0% {
+    background-color: #D6DAFF;
+  }
+  25% {
+    background-color: #D6DAFF;
+  }
+  50% {
+    background-color: #D6DAFF;
+  }
+  75% {
+    background-color: #D6DAFF;
+  }
+  100% {
+    background-color: #D6DAFF;
+  }
+}
+@-o-keyframes pulsate {
+  0% {
+    background-color: #D6DAFF;
+  }
+  25% {
+    background-color: #D6DAFF;
+  }
+  50% {
+    background-color: #D6DAFF;
+  }
+  75% {
+    background-color: #D6DAFF;
+  }
+  100% {
+    background-color: #D6DAFF;
+  }
+}
+@keyframes pulsate {
+  0% {
+    background-color: #D6DAFF;
+  }
+  25% {
+    background-color: #D6DAFF;
+  }
+  50% {
+    background-color: #D6DAFF;
+  }
+  75% {
+    background-color: #D6DAFF;
+  }
+  100% {
+    background-color: #D6DAFF;
+  }
+}
+@-webkit-keyframes move {
+  to {
+    stroke-dashoffset: -1200;
+  }
+}
+@-moz-keyframes move {
+  to {
+    stroke-dashoffset: -1200;
+  }
+}
+@-o-keyframes move {
+  to {
+    stroke-dashoffset: -1200;
+  }
+}
+@keyframes move {
+  to {
+    stroke-dashoffset: -1200;
+  }
+}
+@-webkit-keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@-o-keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.loader {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999999;
+  -webkit-animation-duration: 80s;
+  -moz-animation-duration: 80s;
+  -o-animation-duration: 80s;
+  animation-duration: 80s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: pulsate;
+  -moz-animation-name: pulsate;
+  -o-animation-name: pulsate;
+  animation-name: pulsate;
+  -webkit-animation-direction: normal;
+  -moz-animation-direction: normal;
+  -o-animation-direction: normal;
+  animation-direction: normal;
+}
+.loader svg {
+  left: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.animation {
+  fill: none;
+  stroke: #ffffff;
+  stroke-linecap: square;
+  stroke-miterlimit: 10;
+  stroke-width: 0.5px;
+  opacity: 1;
+  stroke-dasharray: 600;
+  -webkit-animation: move 5s linear forwards infinite, fade 5s linear infinite;
+  animation: move 5s linear forwards infinite, fade 5s linear infinite;
+}
+</style>

@@ -1,10 +1,53 @@
 .App {
   text-align: center;
+  background-color: #f4f5f8;
+  height: 100%;
+}
+
+.otpContainer {
+  padding: 5% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 190px;
+
+}
+
+.btn {
+  margin-top: 30px;
+}
+.otpInput {
+  width: 3rem !important;
+  height: 3rem;
+  margin: 0 1rem;
+  font-size: 2rem;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.choose{
+  height: 100vh;
+}
+
+.box{
+  height: 100vh;
+}
+
+.flex-box{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.user{
+  color: '#C2C8FF'
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,26 +56,301 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.welcome {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.features{
+  width: 93%;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  height: 45rem;
+  padding-top: 30px;
+  border-radius: 35px;
+  margin-left: 50px;
+  margin-right: 40px;
+  display: flex;
+  background-image: url('/Users/varisharashid/blockchain/src/assets/icons/bg.jpeg');
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.choose-box{
+  width: 93%;
+  margin-bottom: 100px;
+  display: flex;
+  background-color: #ffffff;
+  justify-content: center;
+  height: 34rem;
+  padding-top: 30px;
+  border-radius: 35px;
+  margin-left: 50px;
+  margin-right: 40px;
+}
+
+.profile-box{
+  width: 69%;
+  display: flex;
+  background-color: #ffffff;
+  justify-content: center;
+  height: 38rem;
+  flex-direction: column;
+  border-radius: 35px;
+  margin-left: 25px;
+}
+
+.side-box{
+  width: 25%;
+  display: flex;
+  background-color: #ffffff;
+  justify-content: center;
+  height: 38rem;
+  flex-direction: column;
+  padding-top: 30px;
+  border-radius: 35px;
+  margin-left: -5px;
+}
+
+.padding{
+  padding-top: 200px;
+
+}
+.footer-main{
+  padding-top: 90px;
+}
+
+
+.account-settings .user-profile {
+  margin: 0 0 1rem 0;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+  margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+}
+.account-settings .user-profile h5.user-name {
+  margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h6.user-email {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #9fa8b9;
+}
+.account-settings .about {
+  margin: 2rem 0 0 0;
+  text-align: center;
+}
+.account-settings .about h5 {
+  margin: 0 0 15px 0;
+  color: #007ae1;
+}
+.account-settings .about p {
+  font-size: 0.825rem;
+}
+.form-control {
+  border: 1px solid #cfd1d8;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  width: 80%;
+  margin-left: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: .825rem;
+  background: #ffffff;
+  color: #2e323c;
+}
+
+.card {
+  background: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 0;
+}
+
+
+
+
+.address-main > div.col-lg-4 {
+  border-bottom: dotted 1px #999;
+}
+.address-box {
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+.add-icon{
+  float: left;
+  width: 60px;
+  display: inline-block;
+  padding: 0px 5px;
+}
+.address-box .add-icon {
+  background: #27303b;
+  height: 75px;
+  line-height: 75px;
+  width: 75px;
+  margin-right: 20px;
+  text-align: center;
+}
+.add-icon img{
+  width: 100%;
+}
+.address-box .add-icon img {
+  max-width: 40px;
+}
+.add-content{
+  padding-left: 70px;
+}
+.add-content h5 {
+  font-size: 17px;
+  color: #ffffff;
+  padding: 0;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.add-content p {
+  font-size: 13px;
+  color: #999999;
+  font-weight: 300;
+}
+.add-content p a{
+  font-size: 14px;
+  color: #999999;
+  font-weight: 300;
+  word-wrap: break-word;
+}
+.add-content p a:hover{
+  color: #ffb32d;
+}
+
+
+
+.faq-header{
+  font-size: 42px;
+  border-bottom: 1px dotted #ccc;
+  padding: 24px;
+}
+
+.faq-content {
+  margin: 0 auto;
+}
+
+.faq-question {
+  padding: 20px 0;
+  border-bottom: 1px dotted #ccc;
+}
+
+.panel-title {
+  font-size: 24px;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 0 48px;
+  display: block;
+  cursor: pointer;
+}
+
+.panel-content {
+  font-size: 20px;
+  padding: 0px 14px;
+  margin: 0 40px;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: .4s ease;
+  -moz-transition: .4s ease;
+  -o-transition: .4s ease;
+  transition: .4s ease;
+}
+
+.panel:checked ~ .panel-content{
+  height: auto;
+  opacity: 1;
+  padding: 14px;
+}
+
+.plus {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 4px;
+  z-index: 5;
+  font-size: 42px;
+  line-height: 100%;
+  -webkit-user-select: none;    
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: .2s ease;
+  -moz-transition: .2s ease;
+  -o-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.panel:checked ~ .plus {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.panel {
+  display: none;
+}
+
+.faq-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+
+
+label {
+  font-weight: 600;
+  color: #666;
+}
+
+.box8{
+  height: 39rem;
+  box-shadow: 0px 0px 5px 1px #999;
+  margin-left: 60px;
+  width: 90%;
+}
+
+.box9{
+  height: 25rem;
+  box-shadow: 0px 0px 5px 1px #999;
+  margin-left: 200px;
+  margin-top: 40px;
+  width: 70%;
+
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-left: 300px;
+  width: 80%;
+}
+
+.mx-t3{
+margin-top: -3rem;
 }
