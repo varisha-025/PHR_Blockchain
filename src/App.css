@@ -90,6 +90,18 @@
   margin-right: 40px;
 }
 
+.decision-box{
+  width: 50%;
+  margin-bottom: 100px;
+
+  background-color: #ffffff;
+  height: 14rem;
+  padding-top: 30px;
+  border-radius: 35px;
+  margin-left: 50px;
+  margin-right: 40px;
+}
+
 .profile-box{
   width: 69%;
   display: flex;
@@ -326,6 +338,11 @@ label {
   color: #666;
 }
 
+.box-new{
+  height: 100vh;
+  display: flex;
+}
+
 .box8{
   height: 39rem;
   box-shadow: 0px 0px 5px 1px #999;
@@ -342,14 +359,14 @@ label {
 
 }
 
-.flex{
+.flex2{
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding-left: 300px;
   width: 80%;
-}
+} 
 
 .mx-t3{
 margin-top: -3rem;

@@ -19,7 +19,7 @@ export default function UserProfile() {
     const profile = localStorage.getItem('profile');
 
     return (
-        <div className='box pt-10'>
+        <div className='box-new pt-10'>
 
             <Box className="side-box">
                 <Box sx={{ marginTop: '-200px', marginBottom: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -46,7 +46,7 @@ export default function UserProfile() {
                             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div className="form-group">
                                     <label htmlFor="eMail">Email</label>
-                                    <input type="email" className="form-control" id="eMail" placeholder="Enter email ID" />
+                                    <input type="email" className="form-control" id="eMail" placeholder="Enter email S.No" />
                                 </div>
                             </div>
                             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

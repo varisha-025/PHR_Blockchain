@@ -4,13 +4,20 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect,  } from "react";
 
 export default function UserRegistrationForm() {
 
     const [aadhar, setAadhar] = useState('');
     const [error, setError] = useState('');
+
+    useEffect(() => {
+        localStorage.setItem('aadhar', aadhar)
+       
+      },[aadhar]);
+
+ 
+
 
     const changeValue = (value) => {
         if (value.length > 12) {
@@ -29,6 +36,7 @@ export default function UserRegistrationForm() {
             setError('Good to go!');
         }
         setAadhar(value);
+
     }
 
     return (

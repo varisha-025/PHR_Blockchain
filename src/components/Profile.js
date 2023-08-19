@@ -17,6 +17,20 @@ export default function Dashboard() {
         },
     ]
 
+    const [profile, setProfile] = React.useState('patient')
+
+    React.useEffect(() => {
+        localStorage.setItem('profile', profile)
+       
+      },[profile]);
+
+    function handleSubmit(event){
+        event.preventDefault()
+        setProfile(event.target.value)
+        console.log(event.target.value)
+        // localStorage.setItem('profile', event.target.value)
+    }
+
     return (
         <div>
             <div className='flex align-center justify-center pt-20'>
@@ -43,11 +57,12 @@ export default function Dashboard() {
                         aria-labelledby="demo-radio-buttons-group-label"
                         defaultValue="Patient"
                         name="radio-buttons-group"
+                        onChange={handleSubmit}
                     >
                         <FormControlLabel value="Patient" control={<Radio />} label="Patient" />
-                        <FormControlLabel value="Hospital" control={<Radio />} label="Hospital" />
-                        <FormControlLabel value="Clinic" control={<Radio />} label="Clinic" />
-                        <FormControlLabel value="Doctor" control={<Radio />} label="Doctor" />
+                        <FormControlLabel value="Doctor" control={<Radio />} label="Hospital Owner" />
+                        <FormControlLabel value="Clinic" control={<Radio />} label="Clinic Owner" />
+                        <FormControlLabel value="HealthProfessional" control={<Radio />} label="Health Professional" />
                     </RadioGroup>
 
                     <Button variant="contained" color="primary" href="/user_register" sx={{marginTop: '20px'}}>

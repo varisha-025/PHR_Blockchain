@@ -44,7 +44,7 @@ export default function MedicalProfile() {
                             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div className="form-group">
                                     <label htmlFor="eMail">Email</label>
-                                    <input type="email" className="form-control" id="eMail" placeholder="Enter email ID" />
+                                    <input type="email" className="form-control" id="eMail" placeholder="Enter email S.No" />
                                 </div>
                             </div>
                             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

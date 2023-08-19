@@ -1,4 +1,5 @@
 import './App.css';
+import * as React from 'react'
 import Home from './components/Home.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import DoctorRecords from './components/DoctorRecords';
@@ -8,14 +9,14 @@ import MedicalRecordsForm from './components/Forms/MedicalRecordsForm';
 import Welcome from './components/Welcome';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile.js';
-import * as React from 'react'
 import OtpInput from './components/Forms/Otp'
 import FindDoctor from './components/FindDoctor';
 import FindPatient from './components/FindPatient';
 import MedicalProfile from './components/MedicalProfile'
-import OrgRegister from './components/OrgRegister'
+import OrgRegister from './components/BasicDetails'
 import HealthProffRegister from './components/HealthProffRegister'
-
+import Hospitals from './components/HospitalsData'
+import Decision from './components/Decision';
 
 function App() {
 
@@ -46,6 +47,9 @@ function App() {
           <Route path="/welcome" element={<Welcome name={user} />} />
         </Routes>
         <Routes>
+          <Route path="/hospitals" element={<Hospitals name={user} />} />
+        </Routes>
+        <Routes>
           <Route path="/medical" element={<MedicalRecordsForm />} />
         </Routes>
         <Routes>
@@ -58,7 +62,10 @@ function App() {
           <Route path="/findDoctor" element={<FindDoctor />} />
         </Routes>
         <Routes>
-          <Route path="/orgRegister" element={<OrgRegister />} />
+          <Route path="/basicDetails" element={<OrgRegister />} />
+        </Routes>
+        <Routes>
+          <Route path="/decision" element={<Decision />} />
         </Routes>
         <Routes>
           <Route path="/healthProfRegister" element={<HealthProffRegister />} />

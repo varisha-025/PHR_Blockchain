@@ -45,7 +45,7 @@ export default function Features() {
                                     <b> Secure Identity </b>
                                 </Typography>
                                 <Typography variant="h6" color="#737272" sx={{ marginTop: '20px' }}>
-                                    Ensure privacy with reliable ID verification using Abha ID and Aadhar integration for patients and healthcare professionals.
+                                    Ensure privacy with reliable S.No verification using Abha S.No and Aadhar integration for patients and healthcare professionals.
                                 </Typography>
                             
                         </Grid>

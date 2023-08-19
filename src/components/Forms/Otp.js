@@ -94,6 +94,24 @@ class Otpinput extends React.Component {
                             onChange={e => this.handleChange("otp4", e)}
                             tabIndex="4" maxLength="1" onKeyUp={e => this.inputfocus(e)}
                         />
+                        <input
+                            name="otp5"
+                            type="text"
+                            autoComplete="off"
+                            className="otpInput"
+                            value={this.state.otp5}
+                            onChange={e => this.handleChange("otp5", e)}
+                            tabIndex="5" maxLength="1" onKeyUp={e => this.inputfocus(e)}
+                        />
+                        <input
+                            name="otp6"
+                            type="text"
+                            autoComplete="off"
+                            className="otpInput"
+                            value={this.state.otp6}
+                            onChange={e => this.handleChange("otp6", e)}
+                            tabIndex="6" maxLength="1" onKeyUp={e => this.inputfocus(e)}
+                        />
 
                     </div>
                     <Button variant="contained" sx={{ marginTop: '40px'}} type="submit" href="/welcome">
