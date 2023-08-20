@@ -43,6 +43,8 @@ export default function MedicalRecordsForm() {
             allergies: allergiesValue,
             bloodGroup: bloodGroupValue,
         }
+
+        
         let basicDetails = JSON.parse(localStorage.getItem('basicDetails'))
 
         let finalDetails = {
@@ -123,10 +125,8 @@ export default function MedicalRecordsForm() {
                             onChange={event => {
                                 setHeight(event.target.value)
                                 setBtnDisabled(!event.target.value)
-                            }
-
-                            }
-                            // helperText={errorHeight}
+                            }}
+                        // helperText={errorHeight}
                         />
                         <FormHelperText id="my-helper-text" sx={{ marginLeft: '13px' }}>in cms</FormHelperText>
 
@@ -142,7 +142,7 @@ export default function MedicalRecordsForm() {
                                 setWeight(event.target.value)
 
                             }}
-                            // helperText={errorWeight}
+                        // helperText={errorWeight}
                         />
                         <FormHelperText id="my-helper-text" sx={{ marginLeft: '13px' }}>in kgs</FormHelperText>
 
