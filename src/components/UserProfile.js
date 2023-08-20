@@ -9,6 +9,7 @@ import {useState, useEffect} from 'react';
 import axios from "axios";
 import {useParams} from "react-router-dom";
 import { DataGrid } from "@mui/x-data-grid";
+import { Navbar } from "@themesberg/react-bootstrap";
 
 
 export default function UserProfile() {
@@ -16,7 +17,7 @@ export default function UserProfile() {
     let [personalDetails, setPersonalDetails] = useState({});
     let [record, setRecord] = useState([]);
     let [profile, setProfile] = useState("patient");
-    const {id} = useParams();
+    let {id} = useParams();
 
     let handleClick = () => {
 
@@ -55,7 +56,7 @@ export default function UserProfile() {
               <Button
                 variant="contained"
                 color="primary"
-                href={cellValues.row.health_record_document}
+                href="https://s3-grid.s3.ap-south-1.amazonaws.com/cdda65ec681aa26917a3c8e00b67489e"
               >
                 Download document
               </Button>
@@ -67,6 +68,10 @@ export default function UserProfile() {
     useEffect(() => {
         let prof = localStorage.getItem("profile");
         setProfile(prof);
+        if (!id) {
+            let userDetails = JSON.parse(localStorage.getItem("user"));
+            id = userDetails.patient_details.adhar_number;
+        }
         axios.get(`http://localhost:3001/patient/record?adhar_number=${id}`)
         .then(({data}) => {
             console.log(data);

@@ -28,6 +28,8 @@ export default function MenuAppBar() {
     if (localStorage.getItem('user') !== null) {
       let user = JSON.parse(localStorage.getItem('user'));
       let prof = localStorage.getItem('profile');
+      console.log(user);
+      console.log(prof);
       setUserProfile(user);
       setProfile(prof);
     }
@@ -65,7 +67,14 @@ export default function MenuAppBar() {
           }
 
           {
-            auth && profile !== "patient" && userProfile.is_admin && 
+            auth && profile === "Patient" && 
+            <Button variant="h6" href="/findDoctor" sx={{ marginLeft: '830px', textAlign: 'right' }}>
+              Find Doctor
+            </Button>
+          }
+
+          {
+            auth && profile !== "Patient" && userProfile.is_admin && 
             <Button variant="h6" href="/decision" sx={{ marginLeft: '852px', textAlign: 'right' }}>
               Requests
             </Button>

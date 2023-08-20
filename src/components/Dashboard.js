@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import FindPatient from './Patient';
 import Hospitals from './HospitalsData';
+import UserProfile from './UserProfile';
 
 export default function Dashboard() {
 
@@ -25,9 +26,9 @@ export default function Dashboard() {
             <Navbar />
             <div className='box mt-10'>
                 {
-                    profile === "patient" ? 
+                    profile === "Patient" ? 
                     <>
-                        
+                        <UserProfile />
                     </> :
                     <>
                         {userDetails && userDetails.HFR_id === "" ? <Hospitals /> : <FindPatient />}
