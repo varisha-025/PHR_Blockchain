@@ -8,7 +8,7 @@ export default function OrgRegister() {
 
     React.useEffect(() => {
         if (localStorage.getItem('user') === null) {
-            setAuth = false;
+            setAuth(false);
         }
 
     }, [])

@@ -7,7 +7,6 @@ import {  Typography } from '@mui/material';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Button from '@mui/material/Button';
-import { useNavigate } from 'react-router-dom';
 
 export default function Welcome(props) {
 
@@ -17,19 +16,6 @@ export default function Welcome(props) {
           title: 'Welcome',
         },
     ]
-
-    const navigate = useNavigate();
-
-    function handleSubmit(){
-        // console.log(localStorage.getItem('profile'))
-        if (localStorage.getItem('profile') === 'patient'){
-            navigate('/basicDetails')
-        }
-        else {
-            navigate('/hospitals')
-        }
-    }
-
     return (
         <div>
             <React.Fragment>
@@ -51,9 +37,9 @@ export default function Welcome(props) {
                             Welcome <p className='user'>{props.name}</p>
                         </Typography>
                         <Typography variant="h5" component="h3" sx={{ padding: '20px', width: '470px', marginLeft: '200px' }}>
-                            We will need some more information of your health profile
+                            {(localStorage.getItem("profile") === "patient" ? <>We will need some more information of your health profile</> : <>We will require some more details to get you registered to national health stack! <br /> <br /> Don't worry your Healthcare professional Id is safe with us. <br /><br /> </>)}
                         </Typography>
-                        <Button variant="contained" color="primary" onClick={handleSubmit}>
+                        <Button variant="contained" color="primary" href="/basicDetails">
                             Let's Go
                         </Button>
                     </Box>

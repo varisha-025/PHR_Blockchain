@@ -15,7 +15,7 @@ export default function Home() {
 
     React.useEffect(() => {
         if (localStorage.getItem('user') === null) {
-            setAuth = false;
+            setAuth(false);
         }
 
     }, [])

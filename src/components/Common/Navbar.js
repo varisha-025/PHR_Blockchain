@@ -9,25 +9,39 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { Link } from '@mui/material';
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
 export default function MenuAppBar() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [userProfile, setUserProfile] = React.useState({});
+  const [profile, setProfile] = React.useState()
+  const navigate = useNavigate();
 
 
   React.useEffect(() => {
     if (localStorage.getItem('user') === null) {
-      setAuth = false;
+      setAuth(false);
     }
 
+    if (localStorage.getItem('user') !== null) {
+      let user = JSON.parse(localStorage.getItem('user'));
+      let prof = localStorage.getItem('profile');
+      setUserProfile(user);
+      setProfile(prof);
+    }
   }, [])
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = (event) => {
     setAnchorEl(null);
+    localStorage.clear();
+    event.preventDefault();
+    navigate("/");
   };
 
   return (
@@ -43,9 +57,19 @@ export default function MenuAppBar() {
           {/* <Typography variant="h6" component="div" sx={{ marginLeft: '852px', textAlign: 'right' }}>
             About us
           </Typography> */}
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, marginRight: '30px', textAlign: 'right' }}>
+          {
+            !auth && 
+            <Button href="/login" variant="h6" sx={{ text: "white", marginRight: '30px', textAlign: 'right' }}>
             Login
-          </Typography>
+          </Button>
+          }
+
+          {
+            auth && profile !== "patient" && userProfile.is_admin && 
+            <Button variant="h6" href="/decision" sx={{ marginLeft: '852px', textAlign: 'right' }}>
+              Requests
+            </Button>
+          }
 
 
           {auth && (

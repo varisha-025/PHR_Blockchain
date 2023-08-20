@@ -13,7 +13,6 @@ export default function UserRegistrationForm() {
 
     useEffect(() => {
         localStorage.setItem('aadhar', aadhar)
-       
       },[aadhar]);
 
  

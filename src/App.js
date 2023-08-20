@@ -17,16 +17,17 @@ import OrgRegister from './components/BasicDetails'
 import HealthProffRegister from './components/HealthProffRegister'
 import Hospitals from './components/HospitalsData'
 import Decision from './components/Decision';
+import Login from './components/Forms/LoginForm';
 
 function App() {
 
   const user = localStorage.getItem('user');
 
-  const [auth, setAuth] = React.useState(true);
+  let [auth, setAuth] = React.useState(true);
 
   React.useEffect(() => {
     if (user === null) {
-      setAuth = false;
+      setAuth(false);
     }
   })
 
@@ -52,7 +53,7 @@ function App() {
           <Route path="/medical" element={<MedicalRecordsForm />} />
         </Routes>
         <Routes>
-          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/profile/:id" element={<UserProfile />} />
         </Routes>
         <Routes>
           <Route path="/medicalProfile" element={<MedicalProfile />} />
@@ -80,6 +81,9 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/records" element={<DoctorRecords />} />
+        </Routes>
+        <Routes>
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -21,7 +21,6 @@ export default function Dashboard() {
 
     React.useEffect(() => {
         localStorage.setItem('profile', profile)
-       
       },[profile]);
 
     function handleSubmit(event){

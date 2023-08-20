@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 
 export default function BasicDetails() {
 
@@ -13,36 +14,48 @@ export default function BasicDetails() {
     const [state, setState] = useState('Jharkhand')
     const [password, setPassword] = useState('varru1029')
     const [phone, setPhone] = useState('9931230984')
+    const [profession, setProfession] = useState('');
 
 
     useEffect(() => {
         if (localStorage.getItem('user') === null) {
-            setAuth = false;
+            setAuth(false);
         }
 
     }, [])
 
     const navigate = useNavigate();
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         
         console.log(event)
         let basicData = {
-            name: name,
+            patientName: name,
             email: email,
-            address: address,
+            location: address,
             dob: dob,
             gender: gender,
             state: state,
             password: password,
             phone: phone,
-
         }
 
-        localStorage.setItem('basicDetails', JSON.stringify(basicData))
-        let details = JSON.parse(localStorage.getItem('basicDetails'))
-        navigate('/medical')
+        if (localStorage.getItem("profile") === "patient") {
+            localStorage.setItem('basicDetails', JSON.stringify(basicData))
+            navigate('/medical')
+        } else {
+            let { data } = await axios.post("http://localhost:3001/HPR", {
+                hpr_details: {
+                    ...basicData,
+                    profession,
+                    adhar_number: localStorage.getItem('aadhar')
+                }
+            });
+            localStorage.setItem('HPR_details', JSON.stringify(data));
+            localStorage.setItem('user', JSON.stringify(data));
+            navigate("/hospitals")
+        }
     }
 
     return (
@@ -312,18 +325,28 @@ export default function BasicDetails() {
                                 <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
                             </select>
                         </div>
-                        <div className="col-sm-4 form-group">
+                        <div className="col-sm-3 mr-10 form-group">
                             <label htmlFor="tel">Phone</label>
                             <input type="tel" name="phone" className="form-control" id="tel" placeholder="Enter your phone number." required onChange={event => {
                                 setPhone(event.target.value)
                             }}/>
                         </div>
-                        <div className="col-sm-6 form-group">
+                        <div className="col-sm-6 ml-20 form-group">
                             <label htmlFor="password" >Password</label>
                             <input type="Password" name="password" className="form-control" id="pass" placeholder="Enter your password." required onChange={event => {
                                 setPassword(event.target.value)
                             }}/>
                         </div>
+                        { localStorage.getItem("profile") === "patient" ? <></> :
+                            <>
+                                 <div className="col-sm-6 form-group">
+                             <label htmlFor="profession" >profession</label>
+                             <input type="text" name="profession" className="form-control" id="prof" placeholder="Enter your profession" required onChange={event => {
+                                 setProfession(event.target.value)
+                             }}/>
+                        </div>
+                            </>
+                        }
                         <div className="col-sm-12">
                             <a href='/medical'><button className="btn btn-primary float-center pr-6 pl-6" onClick={handleSubmit}>Next</button></a>
                         </div>

@@ -9,6 +9,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import yoga from '../../assets/icons/yoga.png';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function MedicalRecordsForm() {
 
@@ -32,7 +33,7 @@ export default function MedicalRecordsForm() {
 
     const navigate = useNavigate();
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
 
         event.preventDefault();
 
@@ -46,13 +47,21 @@ export default function MedicalRecordsForm() {
         let basicDetails = JSON.parse(localStorage.getItem('basicDetails'))
 
         let finalDetails = {
-            basicDetails,
-            medicalData,
-            aadhar: localStorage.getItem('aadhar'),
+            ...basicDetails,
+            ...medicalData,
+            adhar_number: localStorage.getItem('aadhar'),
         };
 
-        localStorage.setItem('userDetails', JSON.stringify(finalDetails))
-        // navigate('/dashboard')
+        // allergies, blood group and illness not setting up
+
+        let { data } = await axios.post("http://localhost:3001/patient", {
+            patient_details: {
+                ...finalDetails
+            }
+        });
+
+        localStorage.setItem('patientDetails', JSON.stringify(data))
+        navigate('/dashboard')
     }
 
     const allergies = [
