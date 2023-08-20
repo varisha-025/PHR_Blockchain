@@ -39,11 +39,11 @@ export default function Decision() {
             <Navbar />
             <div className='w-100 mt-10'>
                 <div className='flex items-center justify-center flex-column pt-10'>
-                    <Typography  variant='h5' className='mb-5' sx={{ fontWeight: 600, width: '430px'}}>
+                    <Typography  variant='h5' className='header mb-5' sx={{ width: '430px'}} >
                         Choose Health Professionals for your Organisation
                     </Typography>
-                    {data.map((item,ind) => (
-                        <div className='decision-box' key={ind}>
+                    {data.map((item) => (
+                        <div className='decision-box' key={item.HPR_id}>
 
                             <Typography variant='h6' sx={{ fontWeight: 500}} >Name: {item.name}</Typography>
                             {/* <br/> */}

@@ -21,7 +21,7 @@ export default function OrgRegister() {
         <div>
             <div className="box pt-10">
 
-                <Typography variant='h4' sx={{ fontWeight: 600 }}>
+                <Typography variant='h4' className='header'>
                     Create your Healthcare Professional ID
                 </Typography>
                 <Typography variant='h5' className='mt-5 flex2'>
@@ -61,7 +61,6 @@ export default function OrgRegister() {
                                 <option value="doctor">Unani</option>
                                 <option value="nurse">Ayurveda</option>
                                 <option value="nurse">Dentistry</option>
-                               
                             </select>
                         </div>
 

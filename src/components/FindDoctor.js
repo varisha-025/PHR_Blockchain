@@ -9,8 +9,8 @@ export default function FindDoctor() {
   return (
     <div >
       <Navbar/>
-        <Typography variant='h4' sx={{ marginTop: '60px'}}>
-            Find a Doctor
+        <Typography variant='h4' sx={{ marginTop: '60px'}} className='header'>
+            Search Doctors
         </Typography>
       <DoctorRecords/>
 

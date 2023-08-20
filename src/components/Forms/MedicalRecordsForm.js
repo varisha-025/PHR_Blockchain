@@ -12,8 +12,8 @@ import { useNavigate } from 'react-router-dom';
 
 export default function MedicalRecordsForm() {
 
-    const [errorHeight, setErrorHeight] = React.useState('');
-    const [errorWeight, setErrorWeight] = React.useState('');
+    // const [errorHeight, setErrorHeight] = React.useState('');
+    // const [errorWeight, setErrorWeight] = React.useState('');
 
     const [height, setHeight] = React.useState('5');
     const [weight, setWeight] = React.useState(55);
@@ -52,7 +52,7 @@ export default function MedicalRecordsForm() {
         };
 
         localStorage.setItem('userDetails', JSON.stringify(finalDetails))
-        // navigate('/dashboard')
+        navigate('/dashboard')
     }
 
     const allergies = [
@@ -97,10 +97,10 @@ export default function MedicalRecordsForm() {
     return (
 
         <div>
-            <Typography variant="h4" component="h2" sx={{ paddingTop: '60px' }}>
+            <Typography variant="h4" component="h2" sx={{ paddingTop: '60px' }} className='header'>
                 Medical Records Form
             </Typography>
-            <div className='box flex items-center justify-center pt-10'>
+            <div className='w-100 flex items-center justify-center pt-10'>
                 <div className='choose-box'>
                     <ImageList sx={{ width: '600px', height: '350px', marginLeft: '30px', marginTop: '70px' }}>
                         {itemData.map((item) => (
@@ -126,7 +126,7 @@ export default function MedicalRecordsForm() {
                             }
 
                             }
-                            helperText={errorHeight}
+                            // helperText={errorHeight}
                         />
                         <FormHelperText id="my-helper-text" sx={{ marginLeft: '13px' }}>in cms</FormHelperText>
 
@@ -142,7 +142,7 @@ export default function MedicalRecordsForm() {
                                 setWeight(event.target.value)
 
                             }}
-                            helperText={errorWeight}
+                            // helperText={errorWeight}
                         />
                         <FormHelperText id="my-helper-text" sx={{ marginLeft: '13px' }}>in kgs</FormHelperText>
 

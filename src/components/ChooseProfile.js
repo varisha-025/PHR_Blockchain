@@ -65,7 +65,7 @@ export default function Dashboard() {
                         <FormControlLabel value="HealthProfessional" control={<Radio />} label="Health Professional" />
                     </RadioGroup>
 
-                    <Button variant="contained" color="primary" href="/user_register" sx={{marginTop: '20px'}}>
+                    <Button variant="contained" color="primary" href="/aadhar" sx={{marginTop: '20px'}}>
                         Next
                     </Button>
 

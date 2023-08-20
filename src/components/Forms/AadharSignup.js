@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useState, useEffect,  } from "react";
 
-export default function UserRegistrationForm() {
+export default function AadharSignup() {
 
     const [aadhar, setAadhar] = useState('');
     const [error, setError] = useState('');
@@ -15,9 +15,6 @@ export default function UserRegistrationForm() {
         localStorage.setItem('aadhar', aadhar)
        
       },[aadhar]);
-
- 
-
 
     const changeValue = (value) => {
         if (value.length > 12) {
@@ -42,7 +39,7 @@ export default function UserRegistrationForm() {
     return (
 
         <div className='box pt-24'>
-            <Typography variant="h4" component="h2">
+            <Typography variant="h4" component="h2" className='header'>
                 Aadhar Linking
             </Typography>
 
@@ -60,7 +57,7 @@ export default function UserRegistrationForm() {
                 />
             </Box>
             
-            <Button variant="contained" color="primary" href="/otp" sx={{ marginTop: '30px', marginLeft: '47px' }}>
+            <Button variant="contained" color="primary" href="/verify/otp" sx={{ marginTop: '30px', marginLeft: '47px' }}>
                 Next
             </Button>
         </div>

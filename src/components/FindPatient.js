@@ -4,8 +4,16 @@ import Navbar from './Common/Navbar';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
+import SearchIcon from '@mui/icons-material/Search';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 export default function FindDoctor() {
+
+  const handleClick = (event, cellValues) => {
+    console.log(cellValues.row);
+  };
+  
 
   const columns = [
     { field: 'id', headerName: 'S.No', width: 90 },
@@ -24,28 +32,46 @@ export default function FindDoctor() {
     {
       field: 'gender',
       headerName: 'Gender',
-      width: 160,
+      width: 130,
       editable: false,
     },
     {
       field: 'location',
       headerName: 'Location',
-      width: 100,
+      width: 120,
       editable: false,
     },
     {
       field: 'age',
       headerName: 'Age',
       type: 'number',
-      width: 80,
+      width: 70,
       editable: false,
-    }
+    },
+    {
+      field: "View profile",
+      width: 100,
+      renderCell: (cellValues) => {
+        return (
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={(event) => {
+              handleClick(event, cellValues);
+            }}
+            sx={{ marginLeft: '25px' }}
+          >
+            View
+          </Button>
+        );
+      }
+    },
   ];
 
   const initialData = [
     {
       id: 1,
-      aadhar: '123456789012',
+      aadhar: '989012345678',
       patientName: 'John Doe',
       gender: 'Male',
       location: 'New York',
@@ -53,7 +79,7 @@ export default function FindDoctor() {
     },
     {
       id: 2,
-      aadhar: '234567890123',
+      aadhar: '889017655678',
       patientName: 'Jane Smith',
       gender: 'Female',
       location: 'Los Angeles',
@@ -61,7 +87,7 @@ export default function FindDoctor() {
     },
     {
       id: 3,
-      aadhar: '345678901234',
+      aadhar: '893483493489',
       patientName: 'Michael Johnson',
       gender: 'Male',
       location: 'Chicago',
@@ -109,7 +135,7 @@ export default function FindDoctor() {
     },
     {
       id: 9,
-      aadhar: '901234567890',
+      aadhar: '991234567890',
       patientName: 'Maria Martinez',
       gender: 'Female',
       location: 'Dallas',
@@ -117,7 +143,7 @@ export default function FindDoctor() {
     },
     {
       id: 10,
-      aadhar: '012345678901',
+      aadhar: '990329392324',
       patientName: 'James White',
       gender: 'Male',
       location: 'Phoenix',
@@ -127,24 +153,33 @@ export default function FindDoctor() {
 
   const [rows, setRows] = useState(initialData)
 
-  function searchPatient() {
-    let inputAadharNumber = document.getElementById('searchbar').value
-    inputAadharNumber = inputAadharNumber.toLowerCase();
+  function searchPatient(event) {
+    const inputAadharNumber = event.target.value.trim();
 
-    const filteredRows = rows.filter(row => row.aadhar === inputAadharNumber);
-
-    setRows(filteredRows)
+    const filteredRows = initialData.filter(row =>
+      row.aadhar.includes(inputAadharNumber)
+    );
+  
+    setRows(filteredRows);
 
   };
 
   return (
     <div >
       <Navbar />
-      <Typography variant='h4' sx={{ marginTop: '60px' }}>
-        Find Patient by Aadhar Number
+      <Typography variant='h4' sx={{ marginTop: '60px' }} className='header'>
+        Search Patient by Aadhar Number
       </Typography>
 
-      <input id="searchbar" onKeyUp={searchPatient} type="text" name="search" placeholder="Search patient by aadhar"></input>
+      <TextField
+        placeholder="Search patients by aadhar"
+        onChange={searchPatient}
+        sx={{ pt:4, width: '20%'}}
+
+      />
+      <SearchIcon sx={{ pt:6 }}/>
+
+
       <div className='flex-box'>
         <Box sx={{ textAlign: 'center', height: 420, width: '70%', marginTop: '30px', marginLeft: '10px' }}>
           <DataGrid

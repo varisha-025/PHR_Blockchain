@@ -10,16 +10,6 @@ import FAQs from './Common/FAQs';
 
 export default function Home() {
 
-    const [auth, setAuth] = React.useState(true);
-
-
-    React.useEffect(() => {
-        if (localStorage.getItem('user') === null) {
-            setAuth = false;
-        }
-
-    }, [])
-
     return (
         <div >
             <Navbar />
@@ -37,7 +27,7 @@ export default function Home() {
                         We make working as a healthcare professional <b>simpler</b>, <b>safer</b> and <b>smarter</b>.
                     </Typography>
 
-                    <Button variant='contained' href="/choose" sx={{ marginTop: '55px', height: '45px', width: '200px', borderRadius: '30px', backgroundColor: '#707EFF' }}>
+                    <Button variant='contained' href="/choose/profile" sx={{ marginTop: '55px', height: '45px', width: '200px', borderRadius: '30px', backgroundColor: '#707EFF' }}>
                         Get started <ArrowRightAltIcon sx={{ marginLeft: '8px' }} />
                     </Button>
 

@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 export default function BasicDetails() {
 
-    const [auth, setAuth] = useState(true);
     const [name, setName] = useState('Varisha Rashid')
     const [email, setEmail] = useState('varisharashid01@gmail.com')
     const [address, setAddress] = useState('Ranchi')
@@ -13,14 +12,6 @@ export default function BasicDetails() {
     const [state, setState] = useState('Jharkhand')
     const [password, setPassword] = useState('varru1029')
     const [phone, setPhone] = useState('9931230984')
-
-
-    useEffect(() => {
-        if (localStorage.getItem('user') === null) {
-            setAuth = false;
-        }
-
-    }, [])
 
     const navigate = useNavigate();
 
@@ -41,8 +32,8 @@ export default function BasicDetails() {
         }
 
         localStorage.setItem('basicDetails', JSON.stringify(basicData))
-        let details = JSON.parse(localStorage.getItem('basicDetails'))
-        navigate('/medical')
+        // let details = JSON.parse(localStorage.getItem('basicDetails'))
+        navigate('/welcome')
     }
 
     return (

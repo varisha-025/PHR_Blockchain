@@ -1,8 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .App {
   text-align: center;
   background-color: #f4f5f8;
   height: 100%;
 }
+
+.header{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+
+.login-box{
+  height: 28rem;
+  box-shadow: 0px 0px 5px 1px #999;
+  margin-left: 200px;
+  width: 70%;
+  display: flex;
+  padding-top: 45px;
+  flex-direction: column;
+  align-items: center;
+
+}
+
 
 .otpContainer {
   padding: 5% auto;
@@ -16,6 +37,7 @@
 .btn {
   margin-top: 30px;
 }
+
 .otpInput {
   width: 3rem !important;
   height: 3rem;
@@ -73,7 +95,7 @@
   border-radius: 35px;
   margin-left: 50px;
   margin-right: 40px;
-  display: flex;
+  font-family: 'Poppins', 'sans-serif';
   background-image: url('/Users/varisharashid/blockchain/src/assets/icons/bg.jpeg');
 }
 
@@ -115,22 +137,21 @@
   display: flex;
   background-color: #ffffff;
   justify-content: center;
-  height: 38rem;
+  height: 30rem;
   flex-direction: column;
   border-radius: 35px;
-  margin-left: 25px;
+  margin-left: 180px;
+  
 }
 
 .side-box{
   width: 25%;
-  display: flex;
   background-color: #ffffff;
   justify-content: center;
   height: 38rem;
-  flex-direction: column;
-  padding-top: 30px;
   border-radius: 35px;
-  margin-left: -5px;
+  margin-left: 30px;
+  padding-top: 120px;
 }
 
 .padding{

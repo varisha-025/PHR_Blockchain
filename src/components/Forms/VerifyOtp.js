@@ -3,7 +3,6 @@ import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 
 
-
 class Otpinput extends React.Component {
 
     constructor(props) {
@@ -21,9 +20,15 @@ class Otpinput extends React.Component {
 
     handleSubmit(event) {
 
-        const data = new FormData(event.target);
         console.log(this.state);
         event.preventDefault();
+
+        if (localStorage.getItem('profile') === 'patient'){
+            window.location.href = 'http://localhost:3000/personalDetails';
+        }
+        else {
+            window.location.href = 'http://localhost:3000/hospitals';
+        }
     }
 
     inputfocus = (elmnt) => {
@@ -39,7 +44,7 @@ class Otpinput extends React.Component {
             console.log("next");
 
             const next = elmnt.target.tabIndex;
-            if (next < 5) {
+            if (next < 6) {
                 elmnt.target.form.elements[next].focus()
             }
         }
@@ -114,7 +119,7 @@ class Otpinput extends React.Component {
                         />
 
                     </div>
-                    <Button variant="contained" sx={{ marginTop: '40px'}} type="submit" href="/welcome">
+                    <Button variant="contained" sx={{ marginTop: '40px'}} type="submit" onClick={this.handleSubmit}>
                         Submit
                     </Button>
                 </form>

@@ -4,23 +4,14 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { Link } from '@mui/material';
 
 export default function MenuAppBar() {
-  const [auth, setAuth] = React.useState(true);
+
   const [anchorEl, setAnchorEl] = React.useState(null);
-
-
-  React.useEffect(() => {
-    if (localStorage.getItem('user') === null) {
-      setAuth = false;
-    }
-
-  }, [])
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -40,15 +31,12 @@ export default function MenuAppBar() {
             Health-e
           </Typography>
 
-          {/* <Typography variant="h6" component="div" sx={{ marginLeft: '852px', textAlign: 'right' }}>
-            About us
-          </Typography> */}
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, marginRight: '30px', textAlign: 'right' }}>
             Login
           </Typography>
 
 
-          {auth && (
+          {(
             <div>
               <IconButton
                 size="large"

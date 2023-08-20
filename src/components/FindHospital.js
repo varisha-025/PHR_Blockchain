@@ -2,6 +2,15 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import { Typography } from '@mui/material';
+import Navbar from './Common/Navbar';
+import Button from '@mui/material/Button';
+
+
+const handleClick = (event, cellValues) => {
+  console.log(cellValues.row);
+};
+
+
 
 const columns = [
   { field: 'id', headerName: 'S.No', width: 100 },
@@ -30,12 +39,23 @@ const columns = [
     editable: false,
   },
   {
-    field: 'establishmentYear',
-    headerName: 'Establishment Year',
-    type: 'number',
-    width: 100,
-    editable: false,
-  }
+    field: "Request to join",
+    width: 140,
+    renderCell: (cellValues) => {
+      return (
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={(event) => {
+            handleClick(event, cellValues);
+          }}
+          sx={{ marginLeft: '25px', p:1 }}
+        >
+          Request
+        </Button>
+      );
+    }
+  },
 ];
 
 const rows = [
@@ -124,29 +144,35 @@ const rows = [
 
 
 export default function Hospitals() {
+
+ 
+
   return (
-    <div className='box pt-4'>
-      <Typography variant='h4' sx={{ marginTop: '60px' }}>
-        Find Hospitals
-      </Typography>
-      <div className='flex-box'>
-        <Box sx={{ textAlign: 'center', height: 420, width: '70%', marginTop: '30px', marginLeft: '10px' }}>
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            initialState={{
-              pagination: {
-                paginationModel: {
-                  pageSize: 5,
+    <div>
+      <Navbar />
+      <div className='box pt-4'>
+
+        <Typography variant='h4' sx={{ marginTop: '60px' }} className='header'>
+          Search Hospitals
+        </Typography>
+        <div className='flex-box'>
+          <Box sx={{ textAlign: 'center', height: 420, width: '70%', marginTop: '30px', marginLeft: '10px' }}>
+            <DataGrid
+              rows={rows}
+              columns={columns}
+              initialState={{
+                pagination: {
+                  paginationModel: {
+                    pageSize: 5,
+                  },
                 },
-              },
-            }}
-            pageSizeOptions={[5]}
-            disableRowSelectionOnClick
-          />
-        </Box>
+              }}
+              pageSizeOptions={[5]}
+              disableRowSelectionOnClick
+            />
+          </Box>
+        </div>
       </div>
     </div>
-
   );
 }

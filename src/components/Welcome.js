@@ -23,7 +23,7 @@ export default function Welcome(props) {
     function handleSubmit(){
         // console.log(localStorage.getItem('profile'))
         if (localStorage.getItem('profile') === 'patient'){
-            navigate('/basicDetails')
+            navigate('/medical')
         }
         else {
             navigate('/hospitals')
@@ -47,7 +47,7 @@ export default function Welcome(props) {
                                 </ImageListItem>
                             ))}
                         </ImageList>
-                        <Typography variant="h4" component="h3">
+                        <Typography variant="h4" component="h3" className='header'>
                             Welcome <p className='user'>{props.name}</p>
                         </Typography>
                         <Typography variant="h5" component="h3" sx={{ padding: '20px', width: '470px', marginLeft: '200px' }}>
