@@ -25,7 +25,7 @@ const columns = [
   {
     field: 'location',
     headerName: 'Location',
-    width: 100,
+    width: 130,
     editable: false,
   },
   {
@@ -37,7 +37,7 @@ const columns = [
   },
   {
     field: 'experience',
-    headerName: 'Experience (in yrs)',
+    headerName: 'Experience(yrs)',
     type: 'number',
     width: 140,
     editable: false,
@@ -56,13 +56,40 @@ const rows = [
   },
   {
     id: 2,
-    specialty: 'Dermatology',
+    specialty: 'Dermatologist',
     doctorName: 'Snehalatha Alapati',
     qualification: 'MD, Dermatology',
     location: 'Bengaluru, India',
+    age: 47,
+    experience: 12,
+  },
+  {
+    id: 3,
+    specialty: 'Opthalmologist',
+    doctorName: 'Naresh Trehan',
+    qualification: 'MBBS, Dermatology',
+    location: 'Mumbai, India',
+    age: 35,
+    experience: 4,
+  },
+  {
+    id: 4,
+    specialty: 'Oncologist',
+    doctorName: 'Tariq Matin',
+    qualification: 'MS, Oncology',
+    location: 'Kolkata, India',
     age: 40,
     experience: 10,
-  }
+  },
+  {
+    id: 5,
+    specialty: 'Neurologist',
+    doctorName: 'Sadiya Rahman',
+    qualification: 'MD, Neurology',
+    location: 'Bengaluru, India',
+    age: 41,
+    experience: 11,
+  },
 ];
 
 export default function DataGridDemo() {

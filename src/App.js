@@ -12,24 +12,14 @@ import Profile from './components/Profile.js';
 import OtpInput from './components/Forms/Otp'
 import FindDoctor from './components/FindDoctor';
 import FindPatient from './components/FindPatient';
-import MedicalProfile from './components/MedicalProfile'
 import OrgRegister from './components/BasicDetails'
 import HealthProffRegister from './components/HealthProffRegister'
 import Hospitals from './components/HospitalsData'
 import Decision from './components/Decision';
 import Login from './components/Forms/LoginForm';
+import AddMedicalRecordForm from './components/Forms/AddMedicalRecordForm';
 
 function App() {
-
-  const user = localStorage.getItem('user');
-
-  let [auth, setAuth] = React.useState(true);
-
-  React.useEffect(() => {
-    if (user === null) {
-      setAuth(false);
-    }
-  })
 
   return (
     <div className="App">
@@ -44,19 +34,19 @@ function App() {
           <Route path="/user_register" element={<UserRegistrationForm />} />
         </Routes>
         <Routes>
-          <Route path="/welcome" element={<Welcome name={user} />} />
+          <Route path="/addRecord" element={<AddMedicalRecordForm />} />
         </Routes>
         <Routes>
-          <Route path="/hospitals" element={<Hospitals name={user} />} />
+          <Route path="/welcome" element={<Welcome/>} />
+        </Routes>
+        <Routes>
+          <Route path="/hospitals" element={<Hospitals/>} />
         </Routes>
         <Routes>
           <Route path="/medical" element={<MedicalRecordsForm />} />
         </Routes>
         <Routes>
           <Route path="/profile/:id" element={<UserProfile />} />
-        </Routes>
-        <Routes>
-          <Route path="/medicalProfile" element={<MedicalProfile />} />
         </Routes>
         <Routes>
           <Route path="/findDoctor" element={<FindDoctor />} />

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './Common/Navbar';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
@@ -62,13 +61,6 @@ export default function FindPatient() {
       field: 'location',
       headerName: 'Location',
       width: 120,
-      editable: false,
-    },
-    {
-      field: 'age',
-      headerName: 'Age',
-      type: 'number',
-      width: 70,
       editable: false,
     },
     {

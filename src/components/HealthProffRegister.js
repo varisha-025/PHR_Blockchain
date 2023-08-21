@@ -3,16 +3,6 @@ import * as React from 'react';
 
 export default function OrgRegister() {
 
-    const [auth, setAuth] = React.useState(true);
-
-
-    React.useEffect(() => {
-        if (localStorage.getItem('user') === null) {
-            setAuth(false);
-        }
-
-    }, [])
-
     function handleSubmit(data) {
         console.log(data)
     }

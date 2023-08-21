@@ -44,13 +44,13 @@ export default function Hospitals() {
       <Navbar />
       <div className='box pt-4'>
       <Typography variant='h4' sx={{ marginTop: '60px' }}>
-        Choose Hospital <br />
+        <b>Choose Hospital</b> <br />
       </Typography>
-      <Typography variant='h5' sx={{ marginLeft: '350px', marginTop: '60px', marginBottom: '60px', width: '470px' }}>
-        {(hpr_profile.requested_hfr_id === "" ? <>Hey {hpr_profile.name}, kindly mention the health care organisation you want to be associated with.</> : <>Looks like you profile is under review, kindly wait or update the health care organisation to approve you request.</>)}
+      <Typography variant='h5' sx={{ marginLeft: '420px', marginTop: '60px', marginBottom: '60px', width: '490px' }}>
+        {(hpr_profile.requested_hfr_id === "" ? <>Hey {hpr_profile.name}, kindly mention the health care organisation you want to be associated with.</> : <>Looks like your profile is under <b>review</b>, kindly wait or update the health care organisation to approve you request.</>)}
       </Typography>
       <div className='flex-box'>
-        <FormControl className='col-8'>
+        <FormControl className='col-4'>
         <InputLabel id="demo-simple-select-label">Health Care Org.</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -66,12 +66,12 @@ export default function Hospitals() {
         {
           hpr_profile.requested_hfr_id === "" ? 
           <>
-            <Button variant="contained" color="primary" disabled={selectedHosptial === ""} sx={{ marginTop: '35px' }} onClick={handleSubmit}>
+            <Button variant="contained" color="primary" disabled={selectedHosptial === ""} sx={{ marginTop: '35px', marginLeft: '170px', width: '20%' }} onClick={handleSubmit}>
                 Submit
             </Button>
           </> : 
           <>
-            <Button variant="contained" color="primary" disabled={selectedHosptial === hpr_profile.requested_hfr_id} sx={{ marginTop: '35px' }} onClick={handleSubmit}>
+            <Button variant="contained" color="primary" disabled={selectedHosptial === hpr_profile.requested_hfr_id} sx={{ marginTop: '35px', marginLeft: '170px', width: '20%'  }} onClick={handleSubmit}>
                 Update
             </Button>
           </>

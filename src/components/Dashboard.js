@@ -22,9 +22,9 @@ export default function Dashboard() {
     }, []);
 
     return (
-        <div>
+        <div className='w-100'>
             <Navbar />
-            <div className='box mt-10'>
+            <div className=''>
                 {
                     profile === "Patient" ? 
                     <>

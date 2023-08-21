@@ -16,7 +16,7 @@ export default function AddMedicalRecordForm() {
                     Add Medical Record
                 </Typography>
 
-                <form onSubmit={handleSubmit} action='/healthProffRegister'>
+                <form onSubmit={handleSubmit} action='/profile'>
                     <div className="row box9">
                         <div className="col-sm-6 form-group">
                             <label htmlFor="doc_name" className='mt-14'>Doctor Name</label>
@@ -34,8 +34,12 @@ export default function AddMedicalRecordForm() {
                             <label htmlFor="date">Date of Diagnosis</label>
                             <input type="date" className="form-control" name="date" id="date" placeholder="Enter your date" required />
                         </div>
+                        <div className="col-sm-6 form-group">
+                            <label htmlFor="date">Upload Health Document</label>
+                            <input type="file" className="form-control" />
+                        </div>
                         <div className="col-sm-12">
-                            <button className="btn btn-primary float-center mb-4">Add Record</button>
+                            <a href='/profile'><button className="btn btn-primary float-center mb-4">Add Record</button></a>
                         </div>
                     </div>
                 </form>

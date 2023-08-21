@@ -56,6 +56,9 @@
   }
 }
 
+.footer{
+  height: 12rem;
+}
 .welcome {
   display: flex;
   align-items: center;
@@ -74,7 +77,7 @@
   margin-left: 50px;
   margin-right: 40px;
   display: flex;
-  background-image: url('/Users/mananjethwani/personal/Private-Blockchain-EHR-DAPP/PHR_Blockchain/src/assets/icons/bg.jpeg');
+  background-image: url('/Users/varisharashid/blockchain/src/assets/icons/bg.jpeg');
 }
 
 .choose-box{
@@ -111,14 +114,14 @@
 }
 
 .profile-box{
-  width: 69%;
+  width: 72%;
   display: flex;
   background-color: #ffffff;
   justify-content: center;
-  height: 38rem;
+  height: 39rem;
   flex-direction: column;
   border-radius: 35px;
-  margin-left: 25px;
+  margin-left: 180px;
 }
 
 .side-box{

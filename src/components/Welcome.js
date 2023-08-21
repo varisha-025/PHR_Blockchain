@@ -17,10 +17,10 @@ export default function Welcome(props) {
         },
     ]
     return (
-        <div>
+        <div className='w-100'>
             <React.Fragment>
                 <CssBaseline />
-                <Container maxWidth="md">
+                <Container maxWidth="md" sx={{paddingBottom: '50px'}}>
                     <Box sx={{  height: '100vh', paddingTop: '25px', marginBottom: '20px' }} >
                         <ImageList sx={{ width: '800px', height: '350px', marginLeft: '240px' }}>
                             {itemData.map((item) => (
@@ -34,12 +34,12 @@ export default function Welcome(props) {
                             ))}
                         </ImageList>
                         <Typography variant="h4" component="h3">
-                            Welcome <p className='user'>{props.name}</p>
+                           <b>Welcome </b> 
                         </Typography>
-                        <Typography variant="h5" component="h3" sx={{ padding: '20px', width: '470px', marginLeft: '200px' }}>
-                            {(localStorage.getItem("profile") === "patient" ? <>We will need some more information of your health profile</> : <>We will require some more details to get you registered to national health stack! <br /> <br /> Don't worry your Healthcare professional Id is safe with us. <br /><br /> </>)}
+                        <Typography variant="h5" component="h3" sx={{ padding: '20px', width: '480px', marginLeft: '200px' }}>
+                            {(localStorage.getItem("profile") === "patient" ? <>We will need some more information of your health profile</> : <>We will require some more details to get you registered to <b>National Health Stack</b>! <br /> <br /> Don't worry your <b>Healthcare Professional Id</b> is safe with us. <br /><br /> </>)}
                         </Typography>
-                        <Button variant="contained" color="primary" href="/basicDetails">
+                        <Button variant="contained" color="primary" href="/basicDetails" >
                             Let's Go
                         </Button>
                     </Box>

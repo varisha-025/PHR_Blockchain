@@ -101,9 +101,8 @@ export default function BasicDetails() {
                             <select id="gender" className="form-control browser-default custom-select" onChange={event => {
                                 setGender(event.target.value)
                             }}>
-                                <option value="female">Female</option>
-                                <option value="male">Male</option>
-                                <option value="unspesified">Unspecified</option>
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
                             </select>
                         </div>
                         <div className="col-sm-2 form-group">
@@ -331,7 +330,7 @@ export default function BasicDetails() {
                                 setPhone(event.target.value)
                             }}/>
                         </div>
-                        <div className="col-sm-6 ml-20 form-group">
+                        <div className="col-sm-6 ml-14 form-group">
                             <label htmlFor="password" >Password</label>
                             <input type="Password" name="password" className="form-control" id="pass" placeholder="Enter your password." required onChange={event => {
                                 setPassword(event.target.value)
@@ -340,7 +339,7 @@ export default function BasicDetails() {
                         { localStorage.getItem("profile") === "patient" ? <></> :
                             <>
                                  <div className="col-sm-6 form-group">
-                             <label htmlFor="profession" >profession</label>
+                             <label htmlFor="profession" >Profession</label>
                              <input type="text" name="profession" className="form-control" id="prof" placeholder="Enter your profession" required onChange={event => {
                                  setProfession(event.target.value)
                              }}/>

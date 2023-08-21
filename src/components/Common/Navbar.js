@@ -53,12 +53,9 @@ export default function MenuAppBar() {
 
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
 
-            Health-e
+           <a href='/'>Health-e</a> 
           </Typography>
 
-          {/* <Typography variant="h6" component="div" sx={{ marginLeft: '852px', textAlign: 'right' }}>
-            About us
-          </Typography> */}
           {
             !auth && 
             <Button href="/login" variant="h6" sx={{ text: "white", marginRight: '30px', textAlign: 'right' }}>
@@ -109,7 +106,6 @@ export default function MenuAppBar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <Link href="/profile" underline="none"><MenuItem onClick={handleClose}>My account</MenuItem></Link>
                 <MenuItem onClick={handleClose}>Logout</MenuItem>
               </Menu>
             </div>

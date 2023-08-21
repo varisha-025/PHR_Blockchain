@@ -6,19 +6,8 @@ import Box from '@mui/material/Box'
 import Features from './Features';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Footer from './Common/Footer.js';
-import FAQs from './Common/FAQs';
 
 export default function Home() {
-
-    const [auth, setAuth] = React.useState(true);
-
-
-    React.useEffect(() => {
-        if (localStorage.getItem('user') === null) {
-            setAuth(false);
-        }
-
-    }, [])
 
     return (
         <div >
@@ -44,7 +33,6 @@ export default function Home() {
                 </Box>
             </Box>
             <Features />
-            <FAQs/>
             <Footer />
         </div>
 
